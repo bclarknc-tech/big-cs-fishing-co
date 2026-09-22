@@ -189,27 +189,27 @@
   .gear-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
   .card {
     background: var(--navy-900); border: 1px solid var(--hairline);
-    border-radius: 6px; overflow: hidden; transition: transform .2s ease, border-color .2s ease;
+    border-radius: 6px; overflow: hidden;
+    display: flex; flex-direction: column;
+    transition: transform .2s ease, border-color .2s ease;
   }
   .card:hover { transform: translateY(-4px); border-color: rgba(217,158,70,0.4); }
   .card-thumb {
-    aspect-ratio: 4/3; display: grid; place-items: center; position: relative;
-    background:
-      radial-gradient(80% 90% at 50% 100%, rgba(217,158,70,0.14) 0%, rgba(217,158,70,0) 60%),
-      linear-gradient(180deg, var(--navy-700) 0%, var(--navy-900) 100%);
+    aspect-ratio: 1/1; display: grid; place-items: center; position: relative;
+    background: #fff;
   }
   .card-thumb .ph {
     font-family: var(--font-sub); font-size: 11px; letter-spacing: 2px;
-    text-transform: uppercase; color: var(--cream-faint);
+    text-transform: uppercase; color: #9a9a9a;
   }
   .card-thumb img {
     position: absolute; inset: 0; width: 100%; height: 100%;
-    object-fit: cover; opacity: 0; transition: opacity .3s ease;
+    object-fit: contain; opacity: 0; transition: opacity .3s ease;
   }
   .card-thumb img.loaded { opacity: 1; }
-  .card-body { padding: 22px; }
+  .card-body { padding: 22px; display: flex; flex-direction: column; flex: 1 1 auto; }
   .card-body h3 { font-family: var(--font-sub); font-size: 18px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
-  .card-body p { font-size: 14.5px; color: var(--cream-dim); min-height: 44px; }
+  .card-body p { font-size: 14.5px; color: var(--cream-dim); min-height: 44px; flex: 1 1 auto; }
   .card-meta {
     display: flex; align-items: baseline; justify-content: space-between;
     gap: 12px; margin-top: 16px;
@@ -529,10 +529,10 @@
   <div class="wrap">
     <div class="sec-label">More in every box</div>
     <h2 class="sec-title">Hand-packed, every time</h2>
-    <p>Every order ships straight from us — a thank-you card, a Big C's sticker, and a free gift we think you'll like. It's our way of saying thanks for the first cast, and earning the next one.</p>
+    <p>Every order ships straight from us — a thank-you card, a random sticker, and a free gift we think you'll like. It's our way of saying thanks for the first cast, and earning the next one.</p>
     <div class="gift-row">
       <span class="gift-chip"><span class="dot">•</span>Thank-you card</span>
-      <span class="gift-chip"><span class="dot">•</span>Big C's sticker</span>
+      <span class="gift-chip"><span class="dot">•</span>Random sticker</span>
       <span class="gift-chip"><span class="dot">•</span>Free gift with purchase</span>
     </div>
   </div>
