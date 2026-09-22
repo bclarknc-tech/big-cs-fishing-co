@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big C's Fishing Co. — Built to Catch. Made to Last.</title>
+<meta name="description" content="Big C's Fishing Co. — hard-working fishing gear built to catch and made to last. Lures, terminal tackle, and apparel proven on the water.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600&family=Caveat:wght@600&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy-950: #070a0f;
+    --navy-900: #0f1115;
+    --navy-800: #1b2a41;
+    --navy-700: #24384f;
+    --water:    #2c3e50;
+    --cream:    #e6e0d4;
+    --cream-dim:#b6ad9d;
+    --cream-faint:#8a8478;
+    --gold:     #d99e46;
+    --gold-deep:#c07f2e;
+    --steel:    #a9a9a9;
+    --steel-light:#c8c8c8;
+    --hairline: rgba(230,224,212,0.14);
+    --ink-on-gold: #1a1207;
+    --maxw: 1180px;
+    --font-display: "Bebas Neue", "Oswald", Impact, sans-serif;
+    --font-sub: "Oswald", "Arial Narrow", sans-serif;
+    --font-script: "Caveat", "Brush Script MT", cursive;
+    --font-body: "Source Sans 3", "Segoe UI", sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background: var(--navy-950);
+    color: var(--cream);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--gold); color: var(--ink-on-gold); }
+
+  /* ---------- grain overlay ---------- */
+  .grain {
+    position: fixed; inset: 0; z-index: 60; pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- nav ---------- */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(7,10,15,0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .nav-inner {
+    display: flex; align-items: center; gap: 18px;
+    height: 72px;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand img { height: 44px; width: 44px; border-radius: 50%; }
+  .brand-wordmark { display: flex; flex-direction: column; line-height: 1; }
+  .brand-wordmark .name {
+    font-family: var(--font-display); font-size: 22px; letter-spacing: 2px;
+  }
+  .brand-wordmark .sub {
+    font-family: var(--font-sub); font-size: 10px; letter-spacing: 3px;
+    color: var(--gold); text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex; gap: 30px; margin-left: auto;
+    font-family: var(--font-sub); font-size: 13px; letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .nav-links a { color: var(--cream-dim); transition: color .18s ease; padding: 8px 0; }
+  .nav-links a:hover { color: var(--cream); }
+  .nav-cta {
+    font-family: var(--font-sub); font-size: 13px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--ink-on-gold);
+    background: var(--gold); padding: 11px 20px; border-radius: 3px;
+    transition: background .18s ease, transform .18s ease;
+  }
+  .nav-cta:hover { background: var(--gold-deep); transform: translateY(-1px); }
+  .nav-toggle {
+    display: none; margin-left: auto; background: none; border: 1px solid var(--hairline);
+    color: var(--cream); font-family: var(--font-sub); letter-spacing: 2px;
+    padding: 10px 16px; border-radius: 3px; cursor: pointer; font-size: 13px;
+  }
+  .mobile-menu { display: none; border-top: 1px solid var(--hairline); padding: 8px 24px 20px; }
+  .mobile-menu a {
+    display: block; padding: 13px 0; font-family: var(--font-sub);
+    letter-spacing: 2px; text-transform: uppercase; color: var(--cream-dim);
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative; overflow: hidden;
+    text-align: center;
+    padding: 88px 24px 120px;
+    background:
+      radial-gradient(120% 70% at 50% 108%, rgba(217,158,70,0.22) 0%, rgba(217,158,70,0) 55%),
+      linear-gradient(180deg, var(--navy-800) 0%, var(--navy-950) 78%);
+  }
+  .hero .logo-emblem {
+    width: 190px; height: 190px; margin: 0 auto 34px;
+    filter: drop-shadow(0 12px 40px rgba(0,0,0,0.6));
+    animation: rise 1s ease both;
+  }
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  .hero .eyebrow {
+    font-family: var(--font-script); font-size: 40px; color: var(--cream);
+    transform: rotate(-2deg); margin-bottom: 4px;
+  }
+  .hero h1 {
+    font-family: var(--font-display); font-weight: 400;
+    font-size: clamp(56px, 10vw, 118px); line-height: 0.95; letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .hero h1 .accent { color: var(--gold); }
+  .hero .sub {
+    max-width: 560px; margin: 22px auto 36px;
+    font-size: 18px; color: var(--cream-dim);
+  }
+  .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; font-family: var(--font-sub); font-size: 14px;
+    letter-spacing: 2.5px; text-transform: uppercase; padding: 16px 30px;
+    border-radius: 3px; transition: transform .18s ease, background .18s ease, border-color .18s ease;
+  }
+  .btn-solid { background: var(--gold); color: var(--ink-on-gold); }
+  .btn-solid:hover { background: var(--gold-deep); transform: translateY(-2px); }
+  .btn-ghost { border: 1px solid var(--cream-dim); color: var(--cream); }
+  .btn-ghost:hover { border-color: var(--cream); transform: translateY(-2px); }
+
+  /* ---------- marquee strip ---------- */
+  .strip {
+    border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);
+    background: var(--navy-900); overflow: hidden; white-space: nowrap;
+  }
+  .strip-track {
+    display: inline-block; padding: 14px 0;
+    font-family: var(--font-display); font-size: 18px; letter-spacing: 6px;
+    text-transform: uppercase; color: var(--cream-faint);
+    animation: marquee 28s linear infinite;
+  }
+  .strip-track span { margin: 0 24px; }
+  .strip-track .dot { color: var(--gold); }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ---------- sections ---------- */
+  section { padding: 96px 0; }
+  .sec-label {
+    font-family: var(--font-sub); font-size: 12px; letter-spacing: 4px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+  }
+  .sec-title {
+    font-family: var(--font-display); font-weight: 400;
+    font-size: clamp(40px, 6vw, 64px); line-height: 1; letter-spacing: 2px;
+    text-transform: uppercase; margin-bottom: 20px;
+  }
+
+  /* ---------- story ---------- */
+  .story { background: var(--navy-900); }
+  .story-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+  .story p { color: var(--cream-dim); font-size: 17px; margin-bottom: 18px; max-width: 54ch; }
+  .story p strong { color: var(--cream); font-weight: 600; }
+  .story .sig { font-family: var(--font-script); font-size: 34px; color: var(--gold); }
+  .story-art {
+    position: relative; aspect-ratio: 1; max-width: 420px; margin: 0 auto;
+    display: grid; place-items: center;
+  }
+  .story-art img { width: 100%; filter: drop-shadow(0 16px 50px rgba(0,0,0,0.55)); }
+  .story-art::before {
+    content: ""; position: absolute; inset: -28px; border-radius: 50%;
+    border: 1px dashed var(--hairline); animation: spin 40s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ---------- gear ---------- */
+  .gear { background: var(--navy-950); }
+  .gear-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .card {
+    background: var(--navy-900); border: 1px solid var(--hairline);
+    border-radius: 6px; overflow: hidden; transition: transform .2s ease, border-color .2s ease;
+  }
+  .card:hover { transform: translateY(-4px); border-color: rgba(217,158,70,0.4); }
+  .card-thumb {
+    aspect-ratio: 4/3; display: grid; place-items: center; position: relative;
+    background:
+      radial-gradient(80% 90% at 50% 100%, rgba(217,158,70,0.14) 0%, rgba(217,158,70,0) 60%),
+      linear-gradient(180deg, var(--navy-700) 0%, var(--navy-900) 100%);
+  }
+  .card-thumb .ph {
+    font-family: var(--font-sub); font-size: 11px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--cream-faint);
+  }
+  .card-thumb img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0; transition: opacity .3s ease;
+  }
+  .card-thumb img.loaded { opacity: 1; }
+  .card-body { padding: 22px; }
+  .card-body h3 { font-family: var(--font-sub); font-size: 18px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+  .card-body p { font-size: 14.5px; color: var(--cream-dim); min-height: 44px; }
+  .card-meta {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 12px; margin-top: 16px;
+  }
+  .tag {
+    font-family: var(--font-sub); font-size: 10px; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--cream-faint);
+  }
+  .price {
+    font-family: var(--font-display); font-size: 24px; letter-spacing: 1px;
+    color: var(--gold); white-space: nowrap;
+  }
+  .buy-btn {
+    display: block; text-align: center; margin-top: 14px;
+    font-family: var(--font-sub); font-size: 13px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--ink-on-gold);
+    background: var(--gold); padding: 12px 18px; border-radius: 3px;
+    transition: background .18s ease, transform .18s ease;
+  }
+  .buy-btn:hover { background: var(--gold-deep); transform: translateY(-1px); }
+
+  /* ---------- hand-packed / free gifts ---------- */
+  .handpacked { background: var(--navy-950); border-top: 1px solid var(--hairline); text-align: center; }
+  .handpacked p { color: var(--cream-dim); max-width: 52ch; margin: 0 auto 32px; }
+  .gift-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .gift-chip {
+    font-family: var(--font-sub); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--cream); border: 1px solid var(--hairline); padding: 12px 20px; border-radius: 3px;
+  }
+  .gift-chip .dot { color: var(--gold); margin-right: 8px; }
+
+  footer .sub { font-size: 12px; color: var(--cream-faint); margin-top: 6px; }
+  footer .legal { line-height: 1.7; }
+
+  /* ---------- pillars ---------- */
+  .pillars { background: var(--navy-900); border-top: 1px solid var(--hairline); }
+  .pillar-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--hairline); }
+  .pillar { background: var(--navy-900); padding: 44px 36px; }
+  .pillar .num {
+    font-family: var(--font-display); font-size: 15px; letter-spacing: 3px;
+    color: var(--gold); display: block; margin-bottom: 16px;
+  }
+  .pillar h3 {
+    font-family: var(--font-display); font-weight: 400; font-size: 34px;
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;
+  }
+  .pillar p { color: var(--cream-dim); font-size: 15.5px; }
+
+  /* ---------- manifesto ---------- */
+  .manifesto {
+    text-align: center; padding: 120px 24px;
+    background:
+      radial-gradient(90% 120% at 50% 120%, rgba(217,158,70,0.2) 0%, rgba(217,158,70,0) 60%),
+      var(--navy-950);
+  }
+  .manifesto blockquote {
+    font-family: var(--font-display); font-weight: 400;
+    font-size: clamp(34px, 6vw, 64px); line-height: 1.05; letter-spacing: 1.5px;
+    text-transform: uppercase; max-width: 18ch; margin: 0 auto;
+  }
+  .manifesto .attr { font-family: var(--font-script); font-size: 32px; color: var(--gold); margin-top: 26px; }
+
+  /* ---------- contact ---------- */
+  .contact { background: var(--navy-900); border-top: 1px solid var(--hairline); text-align: center; }
+  .contact p { color: var(--cream-dim); max-width: 44ch; margin: 0 auto 34px; }
+  .signup { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; max-width: 440px; margin: 0 auto 46px; }
+  .signup input {
+    flex: 1 1 240px; min-width: 200px; padding: 15px 16px; border-radius: 3px;
+    border: 1px solid var(--hairline); background: var(--navy-950);
+    color: var(--cream); font-family: var(--font-body); font-size: 15px;
+  }
+  .signup input::placeholder { color: var(--cream-faint); }
+  .signup input:focus { outline: 2px solid var(--gold); outline-offset: 1px; border-color: transparent; }
+  .signup button {
+    font-family: var(--font-sub); font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+    background: var(--gold); color: var(--ink-on-gold); border: none; padding: 15px 24px;
+    border-radius: 3px; cursor: pointer; transition: background .18s ease;
+  }
+  .signup button:hover { background: var(--gold-deep); }
+  .contact .note { font-size: 13px; color: var(--cream-faint); }
+  .socials { display: flex; gap: 14px; justify-content: center; margin-bottom: 40px; }
+  .socials a {
+    font-family: var(--font-sub); font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--cream-dim); border: 1px solid var(--hairline); padding: 9px 16px; border-radius: 3px;
+    transition: color .18s ease, border-color .18s ease;
+  }
+  .socials a:hover { color: var(--cream); border-color: var(--cream-dim); }
+
+  /* ---------- footer ---------- */
+  footer { border-top: 1px solid var(--hairline); padding: 34px 24px; }
+  .footer-inner {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    flex-wrap: wrap; max-width: var(--maxw); margin: 0 auto;
+  }
+  footer .brand { font-family: var(--font-display); letter-spacing: 2px; font-size: 18px; }
+  footer .legal { font-size: 13px; color: var(--cream-faint); }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 860px) {
+    .nav-links, .nav-cta { display: none; }
+    .nav-toggle { display: block; }
+    .mobile-menu.open { display: block; }
+    .story-grid { grid-template-columns: 1fr; gap: 40px; }
+    .story-art { order: -1; max-width: 300px; }
+    .gear-grid { grid-template-columns: repeat(2, 1fr); }
+    .pillar-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 520px) {
+    .gear-grid { grid-template-columns: 1fr; }
+    .hero .logo-emblem { width: 150px; height: 150px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .hero .logo-emblem { animation: none; }
+    .strip-track { animation: none; }
+    .story-art::before { animation: none; }
+  }
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">
+      <img src="assets/logo.png" alt="Big C's Fishing Co. logo">
+      <span class="brand-wordmark">
+        <span class="name">BIG C'S</span>
+        <span class="sub">Fishing Co.</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#story">Our Story</a>
+      <a href="#gear">Gear</a>
+      <a href="#why">Why Big C's</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="#gear">Shop Gear</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+    <a href="#story">Our Story</a>
+    <a href="#gear">Gear</a>
+    <a href="#why">Why Big C's</a>
+    <a href="#contact">Contact</a>
+    <a href="#gear">Shop Gear</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <img class="logo-emblem" src="assets/logo.png" alt="Big C's Fishing Co. emblem">
+  <div class="eyebrow">Big C's</div>
+  <h1>Built to Catch.<br><span class="accent">Made to Last.</span></h1>
+  <p class="sub">Hard-working fishing gear for anglers who'd rather be on the water. Designed by a fisherman, proven where it counts.</p>
+  <div class="hero-actions">
+    <a class="btn btn-solid" href="#gear">Shop the Gear</a>
+    <a class="btn btn-ghost" href="#story">Our Story</a>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>Built to Catch</span><span class="dot">•</span>
+    <span>Made to Last</span><span class="dot">•</span>
+    <span>Built to Catch</span><span class="dot">•</span>
+    <span>Made to Last</span><span class="dot">•</span>
+    <span>Built to Catch</span><span class="dot">•</span>
+    <span>Made to Last</span><span class="dot">•</span>
+  </div>
+</div>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="wrap story-grid">
+    <div>
+      <div class="sec-label">Our Story</div>
+      <h2 class="sec-title">Born on the water</h2>
+      <p>Big C's Fishing Co. started the way most good things do — with a man who'd rather be fishing.</p>
+      <p>We build the gear we want to fish with. Lures that swim true out of the box. Tackle that doesn't quit mid-fight. Gear that outlasts the season instead of getting thrown in a bin come November.</p>
+      <p><strong>No gimmicks. No corners.</strong> Just gear built to catch, and made to last.</p>
+      <div class="sig">— Big C</div>
+    </div>
+    <div class="story-art">
+      <img src="assets/logo.png" alt="Big C's Fishing Co. emblem with leaping game fish and sunset">
+    </div>
+  </div>
+</section>
+
+<!-- GEAR -->
+<section class="gear" id="gear">
+  <div class="wrap">
+    <div class="sec-label">The Gear</div>
+    <h2 class="sec-title">Built for the bite</h2>
+    <div class="gear-grid">
+      <div class="card">
+        <div class="card-thumb">
+          <img src="assets/products/braided-line.jpg" alt="Braided Line 100m" loading="lazy" onerror="this.style.display='none'" onload="this.classList.add('loaded')">
+          <span class="ph">Photo coming</span>
+        </div>
+        <div class="card-body">
+          <h3>Braided Line</h3>
+          <p>4-strand PE braid. Zero-stretch, abrasion-resistant, casts a mile.</p>
+          <div class="card-meta">
+            <span class="tag">100m · Grey / Multi</span>
+            <span class="price">$7.99</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-thumb">
+          <img src="assets/products/mono-line.jpg" alt="Monofilament Line 100m" loading="lazy" onerror="this.style.display='none'" onload="this.classList.add('loaded')">
+          <span class="ph">Photo coming</span>
+        </div>
+        <div class="card-body">
+          <h3>Monofilament Line</h3>
+          <p>8# nylon mono. Smooth casting, low memory, reliable knots.</p>
+          <div class="card-meta">
+            <span class="tag">100m · 8#</span>
+            <span class="price">$5.99</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-thumb">
+          <img src="assets/products/bottle-opener.jpg" alt="Lure Bottle Opener" loading="lazy" onerror="this.style.display='none'" onload="this.classList.add('loaded')">
+          <span class="ph">Photo coming</span>
+        </div>
+        <div class="card-body">
+          <h3>Lure Bottle Opener</h3>
+          <p>Crankbait-shaped bottle opener keychain. Cast metal, 90mm / 34g.</p>
+          <div class="card-meta">
+            <span class="tag">90mm · 5 colors</span>
+            <span class="price">$9.99</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-thumb">
+          <img src="assets/products/rod-strap.jpg" alt="Rod Strap" loading="lazy" onerror="this.style.display='none'" onload="this.classList.add('loaded')">
+          <span class="ph">Photo coming</span>
+        </div>
+        <div class="card-body">
+          <h3>Rod Strap</h3>
+          <p>Hook keeper and rod wrap. Low-profile, holds your hook where it belongs.</p>
+          <div class="card-meta">
+            <span class="tag">250mm · 5 colors</span>
+            <span class="price">$4.99</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-thumb">
+          <img src="assets/products/crankbait-keychains.jpg" alt="Crankbait Keychains 3-pack" loading="lazy" onerror="this.style.display='none'" onload="this.classList.add('loaded')">
+          <span class="ph">Photo coming</span>
+        </div>
+        <div class="card-body">
+          <h3>Crankbait Keychains</h3>
+          <p>Three crankbait keychains per pack. Logo card in every box.</p>
+          <div class="card-meta">
+            <span class="tag">3-pack</span>
+            <span class="price">$9.99</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-thumb">
+          <img src="assets/products/spoon-set.jpg" alt="Spoon Spinner Set 10-pack" loading="lazy" onerror="this.style.display='none'" onload="this.classList.add('loaded')">
+          <span class="ph">Photo coming</span>
+        </div>
+        <div class="card-body">
+          <h3>Spoon Spinner Set</h3>
+          <p>Ten metal spoon spinners. Boxed, sharpened, ready to rip.</p>
+          <div class="card-meta">
+            <span class="tag">10-pack</span>
+            <span class="price">$12.99</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-thumb">
+          <img src="assets/products/pencil-lure.jpg" alt="Pencil Lure" loading="lazy" onerror="this.style.display='none'" onload="this.classList.add('loaded')">
+          <span class="ph">Photo coming</span>
+        </div>
+        <div class="card-body">
+          <h3>Pencil Lure</h3>
+          <p>53mm / 4.4g topwater pencil. Walks the dog, draws the strike.</p>
+          <div class="card-meta">
+            <span class="tag">53mm · 3 colors</span>
+            <span class="price">$6.99</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-thumb">
+          <img src="assets/products/knot-card.jpg" alt="Knot Guide Card" loading="lazy" onerror="this.style.display='none'" onload="this.classList.add('loaded')">
+          <span class="ph">Photo coming</span>
+        </div>
+        <div class="card-body">
+          <h3>Knot Guide Card</h3>
+          <p>Waterproof knot reference. Every knot you need, in your pocket.</p>
+          <div class="card-meta">
+            <span class="tag">Waterproof</span>
+            <span class="price">$5.99</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HAND-PACKED / FREE GIFTS -->
+<section class="handpacked">
+  <div class="wrap">
+    <div class="sec-label">More in every box</div>
+    <h2 class="sec-title">Hand-packed, every time</h2>
+    <p>Every order ships straight from us — a thank-you card, a Big C's sticker, and a free gift we think you'll like. It's our way of saying thanks for the first cast, and earning the next one.</p>
+    <div class="gift-row">
+      <span class="gift-chip"><span class="dot">•</span>Thank-you card</span>
+      <span class="gift-chip"><span class="dot">•</span>Big C's sticker</span>
+      <span class="gift-chip"><span class="dot">•</span>Free gift with purchase</span>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars" id="why">
+  <div class="wrap">
+    <div class="sec-label">Why Big C's</div>
+    <h2 class="sec-title">The whole idea</h2>
+    <div class="pillar-row">
+      <div class="pillar">
+        <span class="num">01</span>
+        <h3>Built to catch</h3>
+        <p>Every lure is tuned before it ships. If it won't catch, it won't carry the name.</p>
+      </div>
+      <div class="pillar">
+        <span class="num">02</span>
+        <h3>Made to last</h3>
+        <p>Materials picked for salt, sun, and abuse — not for the price tag.</p>
+      </div>
+      <div class="pillar">
+        <span class="num">03</span>
+        <h3>Proven on the water</h3>
+        <p>Nothing goes to market until it's put fish in the boat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+  <blockquote>You don't need more gear.<br>You need gear that works.</blockquote>
+  <div class="attr">— Big C</div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-label">Stay in the loop</div>
+    <h2 class="sec-title">Get on the list</h2>
+    <p>New drops, restocks, and where Big C's is fishing next. No spam — we'd rather be on the water too.</p>
+    <form class="signup" onsubmit="event.preventDefault(); this.querySelector('input').value=''; this.querySelector('input').placeholder='Thanks — you\u2019re on the list.';">
+      <input type="email" placeholder="Your email" aria-label="Email address" required>
+      <button type="submit">Join</button>
+    </form>
+    <div class="socials">
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+      <a href="#">Facebook</a>
+    </div>
+    <p class="note">hello@bigcsfishing.co — draft contact, swap in your real email.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <span class="brand">BIG C'S FISHING CO.</span>
+      <div class="sub">A subsidiary of Big C's Products, LLC</div>
+    </div>
+    <div class="legal" style="text-align:right;">
+      hello@bigcsfishing.com<br>
+      © 2026 Big C's Products, LLC. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  // ---- Amazon links ----
+  // When a listing goes live, drop the full Amazon URL in here, e.g.
+  // 'braided-line': 'https://www.amazon.com/dp/B0XXXXXXXXXXXX'
+  const AMAZON = {
+    products: {
+      'braided-line': '',
+      'mono-line': '',
+      'bottle-opener': '',
+      'rod-strap': '',
+      'crankbait-keychains': '',
+      'spoon-set': '',
+      'pencil-lure': '',
+      'knot-card': ''
+    },
+    // Fallback until your storefront + listings are live:
+    fallback: 'https://www.amazon.com/s?k=Big+C%27s+Fishing+Co'
+  };
+
+  document.querySelectorAll('.card').forEach(card => {
+    const img = card.querySelector('.card-thumb img');
+    let slug = null;
+    if (img) {
+      const m = img.src.match(/products\/([^/]+)\./);
+      if (m) slug = m[1];
+    }
+    const url = (slug && AMAZON.products[slug]) || AMAZON.fallback;
+    const btn = document.createElement('a');
+    btn.className = 'buy-btn';
+    btn.href = url;
+    btn.target = '_blank';
+    btn.rel = 'noopener';
+    btn.textContent = 'Buy on Amazon';
+    card.querySelector('.card-body').appendChild(btn);
+  });
+</script>
+</body>
+</html>
