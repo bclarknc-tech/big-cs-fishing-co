@@ -6,60 +6,72 @@
 <title>Thank You Card — Big C's Fishing Co.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Source+Sans+3:wght@400;600&family=Indie+Flower&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: #151515; min-height: 100vh; display: grid; place-items: center; padding: 24px; }
 
-  /* Card: 3.5" x 2" at 300dpi = 1050 x 600 px */
   .card {
-    width: 1050px; height: 600px;
+    width: 1800px; height: 1200px;
     position: relative; overflow: hidden;
-    display: flex; align-items: center;
-    padding: 48px 60px;
-    background: #0a0d12;
-    color: #e6e0d4;
+    display: flex; align-items: stretch;
+    padding: 60px 72px;
+    background: #ffffff;
+    color: #0f1115;
     font-family: "Source Sans 3", "Segoe UI", sans-serif;
-    box-shadow: inset 0 0 0 6px #d99e46;
+    box-shadow: inset 0 0 0 6px #000000;
   }
 
-  .logo { flex: 0 0 auto; width: 230px; height: 230px; margin-right: 52px; filter: drop-shadow(0 12px 34px rgba(0,0,0,0.55)); }
+  .logo { flex: 0 0 auto; width: 850px; height: 850px; margin-right: 40px; align-self: center; }
   .logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
-  .txt { flex: 1 1 auto; min-width: 0; }
+  .txt { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; justify-content: center; padding-left: 0; }
 
   .thanks {
-    font-family: "Bebas Neue", Impact, sans-serif; font-weight: 400;
-    font-size: 92px; line-height: 0.92; letter-spacing: 1px;
-    text-transform: uppercase; color: #e6e0d4;
+    font-family: "Indie Flower", cursive; font-weight: 400;
+    font-size: 130px; line-height: 1.1;
+    color: #0f1115;
   }
-  .thanks .accent { color: #d99e46; }
+  .thanks .accent { color: #c07f2e; }
 
-  .tagline {
-    font-family: "Oswald", "Arial Narrow", sans-serif; font-weight: 400;
-    font-size: 21px; letter-spacing: 5px; text-transform: uppercase;
-    color: #d99e46; margin: 16px 0 24px;
+  .body { font-size: 44px; line-height: 1.5; color: #5a626b; max-width: 24ch; margin-top: 50px; }
+
+  .stars {
+    text-align: center;
+    color: transparent;
+    -webkit-text-stroke: 3px #ffa41c;
+    font-size: 62px; letter-spacing: 12px; line-height: 1;
+    margin: 50px 0 50px;
   }
-
-  .body { font-size: 25px; line-height: 1.45; color: #b6ad9d; max-width: 44ch; }
-  .body strong { color: #e6e0d4; font-weight: 600; }
 
   .foot {
-    margin-top: 28px;
-    font-family: "Oswald", "Arial Narrow", sans-serif; font-size: 16px;
-    letter-spacing: 2.5px; text-transform: uppercase; color: #8a8478;
+    font-family: "Oswald", "Arial Narrow", sans-serif; font-weight: 600;
+    font-size: 52px; letter-spacing: 1px; line-height: 1.35;
+    color: #c07f2e;
   }
-  .foot a { color: #d99e46; text-decoration: none; }
+  .foot a { color: #c07f2e; text-decoration: none; }
+
+  .tagline {
+    margin-top: auto; padding-top: 40px;
+    text-align: center;
+    font-family: "Oswald", "Arial Narrow", sans-serif; font-weight: 400;
+    font-size: 38px; letter-spacing: 5px; text-transform: uppercase;
+    color: #0f1115;
+  }
 </style>
 </head>
 <body>
   <div class="card">
     <div class="logo"><img src="assets/logo.png" alt="Big C's Fishing Co. logo"></div>
     <div class="txt">
-      <div class="thanks">Thanks for<br>fishing <span class="accent">with us.</span></div>
-      <div class="tagline">Built to catch. Made to last.</div>
-      <div class="body">Hand-packed with a little extra in the box. Your feedback helps a small brand reach more anglers — a quick review means a lot.</div>
-      <div class="foot"><a href="mailto:hello@bigcsfishing.com">hello@bigcsfishing.com</a> &nbsp;·&nbsp; bigcsfishing.com</div>
+      <div class="thanks">Thanks for<br><span class="accent">fishing with us.</span></div>
+      <div class="body">Hand-packed with a little extra in the box. A quick review means a lot.</div>
+      <div class="stars">☆☆☆☆☆</div>
+      <div class="foot">
+        <a href="mailto:hello@bigcsfishing.com">hello@bigcsfishing.com</a><br>
+        bigcsfishing.com
+      </div>
+      <div class="tagline">Built to catch &nbsp;•&nbsp; Made to last</div>
     </div>
   </div>
 </body>
