@@ -10,9 +10,9 @@ def font(name, size):
     p = os.path.join(FDIR, name)
     return ImageFont.truetype(p, size) if os.path.exists(p) else ImageFont.load_default()
 
-NAVY = (15, 17, 21)
-GOLD = (192, 127, 46)
-DIM = (90, 98, 107)
+NAVY = (2, 6, 10)
+GOLD = (255, 196, 0)
+DIM = (160, 160, 160)
 STAR = (255, 164, 28)
 BLACK = (0, 0, 0)
 
