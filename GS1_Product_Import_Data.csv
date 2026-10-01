@@ -1,0 +1,20 @@
+Action,GS1CompanyPrefix,GTIN,PackagingLevel,Description,Desc1Language,BrandName,Brand1Language,Status,Industry,SKU,IsVariable,IsPurchasable
+Create,[YOUR_PREFIX_HERE],[AUTO_ASSIGN],Each,Big C's Fishing Co. Braided Fishing Line Grey 0.8# 100m,en,Big C's Fishing Co.,en,PreMarket,General,BC-BRAID-0.8-GRY,N,Y
+Create,[YOUR_PREFIX_HERE],[AUTO_ASSIGN],Each,Big C's Fishing Co. Braided Fishing Line Multicolored 0.8# 100m,en,Big C's Fishing Co.,en,PreMarket,General,BC-BRAID-0.8-MLT,N,Y
+Create,[YOUR_PREFIX_HERE],[AUTO_ASSIGN],Each,Big C's Fishing Co. Nylon Monofilament Fishing Line 8# 100m,en,Big C's Fishing Co.,en,PreMarket,General,BC-MONO-8-100,N,Y
+Create,[YOUR_PREFIX_HERE],[AUTO_ASSIGN],Each,Big C's Fishing Co. Bottle Opener Keychain Color A 90mm,en,Big C's Fishing Co.,en,PreMarket,General,BC-BOTTLE-A,N,Y
+Create,[YOUR_PREFIX_HERE],[AUTO_ASSIGN],Each,Big C's Fishing Co. Bottle Opener Keychain Color B 90mm,en,Big C's Fishing Co.,en,PreMarket,General,BC-BOTTLE-B,N,Y
+Create,[YOUR_PREFIX_HERE],[AUTO_ASSIGN],Each,Big C's Fishing Co. Bottle Opener Keychain Color C 90mm,en,Big C's Fishing Co.,en,PreMarket,General,BC-BOTTLE-C,N,Y
+Create,[YOUR_PREFIX_HERE],[AUTO_ASSIGN],Each,Big C's Fishing Co. Bottle Opener Keychain Color D 90mm,en,Big C's Fishing Co.,en,PreMarket,General,BC-BOTTLE-D,N,Y
+Create,[YOUR_PREFIX_HERE],[AUTO_ASSIGN],Each,Big C's Fishing Co. Bottle Opener Keychain Color E 90mm,en,Big C's Fishing Co.,en,PreMarket,General,BC-BOTTLE-E,N,Y
+Create,[YOUR_PREFIX_HERE],[AUTO_ASSIGN],Each,Big C's Fishing Co. Neoprene Rod Strap Blue 250mm,en,Big C's Fishing Co.,en,PreMarket,General,BC-RODSTRAP-BLU,N,Y
+Create,[YOUR_PREFIX_HERE],[AUTO_ASSIGN],Each,Big C's Fishing Co. Neoprene Rod Strap Red 250mm,en,Big C's Fishing Co.,en,PreMarket,General,BC-RODSTRAP-RED,N,Y
+Create,[YOUR_PREFIX_HERE],[AUTO_ASSIGN],Each,Big C's Fishing Co. Neoprene Rod Strap Orange 250mm,en,Big C's Fishing Co.,en,PreMarket,General,BC-RODSTRAP-ORN,N,Y
+Create,[YOUR_PREFIX_HERE],[AUTO_ASSIGN],Each,Big C's Fishing Co. Neoprene Rod Strap Black 250mm,en,Big C's Fishing Co.,en,PreMarket,General,BC-RODSTRAP-BLK,N,Y
+Create,[YOUR_PREFIX_HERE],[AUTO_ASSIGN],Each,Big C's Fishing Co. Neoprene Rod Strap Camo Blue 250mm,en,Big C's Fishing Co.,en,PreMarket,General,BC-RODSTRAP-CAM,N,Y
+Create,[YOUR_PREFIX_HERE],[AUTO_ASSIGN],Each,Big C's Fishing Co. Crankbait Keychain Set 3pcs,en,Big C's Fishing Co.,en,PreMarket,General,BC-CRANK-3PC,N,Y
+Create,[YOUR_PREFIX_HERE],[AUTO_ASSIGN],Each,Big C's Fishing Co. Spoon Spinner Lure Set 10pcs,en,Big C's Fishing Co.,en,PreMarket,General,BC-SPOON-10PC,N,Y
+Create,[YOUR_PREFIX_HERE],[AUTO_ASSIGN],Each,Big C's Fishing Co. Pencil Lure Blue Silver 53mm,en,Big C's Fishing Co.,en,PreMarket,General,BC-PENCIL-BLU,N,Y
+Create,[YOUR_PREFIX_HERE],[AUTO_ASSIGN],Each,Big C's Fishing Co. Pencil Lure Black Silver 53mm,en,Big C's Fishing Co.,en,PreMarket,General,BC-PENCIL-BLK,N,Y
+Create,[YOUR_PREFIX_HERE],[AUTO_ASSIGN],Each,Big C's Fishing Co. Pencil Lure Gold Green 53mm,en,Big C's Fishing Co.,en,PreMarket,General,BC-PENCIL-GLD,N,Y
+Create,[YOUR_PREFIX_HERE],[AUTO_ASSIGN],Each,Big C's Fishing Co. Fishing Knot Guide Card Waterproof,en,Big C's Fishing Co.,en,PreMarket,General,BC-KNOT-CARD,N,Y
