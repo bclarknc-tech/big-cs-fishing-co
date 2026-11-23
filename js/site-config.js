@@ -1,11 +1,9 @@
-// apiBase: leave "" when the Worker serves these pages (same origin, including the
-// workers.dev preview). On GitHub Pages, set the Worker origin with no trailing slash:
-//   apiBase: "https://bigcs-fishing.<your-subdomain>.workers.dev"
+// apiBase: the Worker origin used by the GitHub Pages site.
+// Leave this as "" only when the Worker serves these pages (same origin).
 //
-// turnstileSiteKey: the preview key below always passes. Replace it with the real
-// Turnstile site key before anglers use the form on www.bigcsfishing.com.
+// turnstileSiteKey: public site key for the Big C's Fishing Turnstile widget.
 // The matching secret is the Worker secret TURNSTILE_SECRET (see DEPLOY.md).
 window.BIGC_CONFIG = {
-  apiBase: "",
-  turnstileSiteKey: "1x00000000000000000000AA"
+  apiBase: "https://bigcs-fishing.bigcs.workers.dev",
+  turnstileSiteKey: "0x4AAAAAAGPaloJJM7GAB3AZ"
 };
