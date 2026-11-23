@@ -1,0 +1,17 @@
+# Not part of the public fishing site. The Worker script serves the rest.
+/worker
+.git
+.wrangler
+node_modules
+.tmp-worker-check
+
+# Internal business files. They stay in the GitHub repo and off the preview site.
+/Archive
+/Creative & Media
+/GS1 & Barcodes
+/Marketing & PPC
+/Amazon Templates
+/_render_card.py
+/_standardize.py
+/source_logo_rgb.jpg
+/DEPLOY.md
