@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EDLXLRNFGV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EDLXLRNFGV');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a review — Big C's Fishing Co.</title>
+<meta name="description" content="Leave a review on the Big C's Fishing Co. website. These reviews are separate from Amazon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/community.css">
+</head>
+<body class="community">
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="">
+      <span>BIG C'S FISHING CO.</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#story">Our Story</a>
+      <a href="index.html#gear">Gear</a>
+      <a href="catches.html">Catch Wall</a>
+      <a href="mailto:hello@bigcsfishing.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="wrap">
+    <section class="share">
+      <p class="sec-label">Gear</p>
+      <h1 class="sec-title">Write a review</h1>
+      <p class="lede">Reviews on our website are separate from Amazon reviews. We read each one before it shows on the product.</p>
+      <p id="review-message" class="form-message" hidden></p>
+      <form id="review-form" action="#" method="post">
+        <label for="product">Product</label>
+        <select id="product" name="productId" required>
+          <option value="">Pick a product</option>
+        </select>
+
+        <fieldset class="stars-input">
+          <legend>Star rating</legend>
+          <label><input type="radio" name="stars" value="1" required> 1 star</label>
+          <label><input type="radio" name="stars" value="2"> 2 stars</label>
+          <label><input type="radio" name="stars" value="3"> 3 stars</label>
+          <label><input type="radio" name="stars" value="4"> 4 stars</label>
+          <label><input type="radio" name="stars" value="5"> 5 stars</label>
+        </fieldset>
+
+        <label for="review-text">Your review</label>
+        <textarea id="review-text" name="reviewText" maxlength="1000" required></textarea>
+        <p class="count" id="review-count">0 / 1000</p>
+
+        <label for="reviewer-name">First name or nickname</label>
+        <input id="reviewer-name" name="reviewerName" type="text" maxlength="40" required autocomplete="nickname">
+
+        <label class="check">
+          <input id="review-consent" name="consent" type="checkbox" value="yes" required>
+          <span>I give Big C's Fishing Company permission to show this review on the website.</span>
+        </label>
+
+        <div id="turnstile"></div>
+        <button id="review-submit" class="buy-btn" type="submit">Send for review</button>
+      </form>
+      <p class="hint"><a href="index.html#gear">Back to the gear</a></p>
+      <noscript><p class="lede">JavaScript is required to send a review.</p></noscript>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><a href="index.html">Big C's Fishing Co.</a></p>
+    <p>BIG C'S FISHING CO. — A subsidiary of Big C's Products, LLC</p>
+  </div>
+</footer>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+<script src="js/site-config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/reviews.js"></script>
+</body>
+</html>

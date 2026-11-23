@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EDLXLRNFGV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EDLXLRNFGV');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catch Wall — Big C's Fishing Co.</title>
+<meta name="description" content="Catches shared by anglers using Big C's Fishing Co. gear. Each photo is reviewed before it is shown.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/community.css">
+</head>
+<body class="community">
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="">
+      <span>BIG C'S FISHING CO.</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#story">Our Story</a>
+      <a href="index.html#gear">Gear</a>
+      <a href="catches.html" aria-current="page">Catch Wall</a>
+      <a href="mailto:hello@bigcsfishing.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="wrap">
+    <p class="sec-label">From the water</p>
+    <h1 class="sec-title">Catch Wall</h1>
+    <p class="lede">Photos from anglers fishing Big C's gear. We look at each one before it goes up.</p>
+    <p id="catch-empty" class="lede">No catches on the wall yet. Share one below.</p>
+    <div id="catch-grid" class="catch-grid"></div>
+
+    <section class="share" id="share">
+      <h2 class="sec-title">Share a catch</h2>
+      <p class="lede">One photo, the species, and the lure you used. A town or water name is enough. We do not take a map pin from the photo.</p>
+      <p id="catch-message" class="form-message" hidden></p>
+      <form id="catch-form" action="#" method="post">
+        <label for="photo">Photo</label>
+        <input id="photo" name="photo" type="file" accept="image/*" required>
+        <img id="photo-preview" alt="Preview of your photo" hidden>
+        <p class="hint">The photo is resized in your browser before it is sent, and camera location data is removed.</p>
+
+        <label for="species">Species</label>
+        <input id="species" name="species" type="text" maxlength="60" required autocomplete="off">
+
+        <label for="lure">Lure used</label>
+        <select id="lure" name="lure" required>
+          <option value="">Pick a Big C's product</option>
+        </select>
+        <div id="lure-other-wrap" hidden>
+          <label for="lure-other">Lure name</label>
+          <input id="lure-other" name="lureOther" type="text" maxlength="80" autocomplete="off">
+        </div>
+
+        <label for="location">Where (optional)</label>
+        <input id="location" name="location" type="text" maxlength="80" placeholder="Town or water" autocomplete="off">
+
+        <label for="note">Note (optional)</label>
+        <textarea id="note" name="note" maxlength="500"></textarea>
+        <p class="count" id="note-count">0 / 500</p>
+
+        <label for="angler-name">First name or nickname</label>
+        <input id="angler-name" name="anglerName" type="text" maxlength="40" required autocomplete="nickname">
+
+        <label class="check">
+          <input id="photo-consent" name="photoConsent" type="checkbox" value="yes" required>
+          <span>I give Big C's Fishing Company permission to show this photo on the website and on social media.</span>
+        </label>
+        <label class="check">
+          <input id="age-consent" name="ageConsent" type="checkbox" value="yes" required>
+          <span>I am 18 or older, or I have a parent's permission to send this.</span>
+        </label>
+
+        <div id="turnstile"></div>
+        <button id="catch-submit" class="buy-btn" type="submit">Share this catch</button>
+      </form>
+      <noscript><p class="lede">JavaScript is required to share a catch and to load the wall.</p></noscript>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><a href="index.html">Big C's Fishing Co.</a></p>
+    <p>BIG C'S FISHING CO. — A subsidiary of Big C's Products, LLC</p>
+  </div>
+</footer>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+<script src="js/site-config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/photo.js"></script>
+<script src="js/catches.js"></script>
+</body>
+</html>

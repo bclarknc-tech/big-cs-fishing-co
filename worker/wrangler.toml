@@ -1,0 +1,40 @@
+name = "bigcs-fishing"
+main = "src/index.js"
+compatibility_date = "2026-11-17"
+workers_dev = true
+
+# Preview only. Do not add a route for bigcsfishing.com or www.bigcsfishing.com.
+# The live site stays on GitHub Pages and calls this Worker after you set js/site-config.js.
+
+[assets]
+directory = ".."
+binding = "ASSETS"
+html_handling = "auto-trailing-slash"
+not_found_handling = "404-page"
+run_worker_first = [ "/api/*", "/admin", "/admin/*" ]
+
+# Replace database_id after: npx wrangler d1 create bigcs-fishing
+[[d1_databases]]
+binding = "DB"
+database_name = "bigcs-fishing"
+database_id = "00000000-0000-0000-0000-000000000001"
+migrations_dir = "migrations"
+
+# Replace id after: npx wrangler kv namespace create PHOTOS
+[[kv_namespaces]]
+binding = "PHOTOS"
+id = "00000000-0000-0000-0000-000000000002"
+
+# Sends only to this address. It must be a verified Email Routing destination.
+# From address must be on your Email Routing domain. Change NOTIFY_FROM if needed.
+[[send_email]]
+name = "EMAIL"
+destination_address = "bigcs.fishingco@gmail.com"
+
+[vars]
+NOTIFY_FROM = "notify@bigcsfishing.com"
+# Always-pass Turnstile test secret for the workers.dev preview.
+# Before real anglers use the form, replace it (this overrides the var):
+#   npx wrangler secret put TURNSTILE_SECRET
+# Put the matching site key in js/site-config.js. See DEPLOY.md.
+TURNSTILE_SECRET = "1x0000000000000000000000000000000AA"

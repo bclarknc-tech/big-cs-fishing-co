@@ -17,6 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600&family=Caveat:wght@600&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/community.css">
 <style>
   :root {
     --navy-950: #02060a;
@@ -149,8 +150,8 @@
 
   /* ---------- responsive fixes ---------- */
   @media (max-width: 768px) {
-    .nav-inner { justify-content: center; height: auto; padding: 15px 0; }
-    .nav-links { display: none; } /* Hide desktop nav on mobile for clean look */
+    .nav-inner { flex-wrap: wrap; justify-content: center; height: auto; padding: 12px 0; gap: 8px; }
+    .nav-links { display: flex; flex-wrap: wrap; justify-content: center; margin-left: 0; width: 100%; gap: 12px 16px; }
     .hero { padding: 80px 15px; min-height: 70vh; }
     .hero h1 { font-size: 48px; }
     .logo-emblem { width: 180px; height: 180px; }
@@ -176,6 +177,7 @@
       <a href="#top">Home</a>
       <a href="#story">Our Story</a>
       <a href="#gear">Gear</a>
+      <a href="catches.html">Catch Wall</a>
       <a href="mailto:hello@bigcsfishing.com">Contact</a>
     </nav>
   </div>
@@ -233,6 +235,7 @@
         <h3>Braided Line</h3>
         <div class="price">$8.99 <span class="ship-badge">Free shipping on any 3+ items</span></div>
         <a class="buy-btn" href="https://www.amazon.com/dp/B0HLX1FFR5" target="_blank" rel="noopener">Buy on Amazon</a>
+        <div class="product-reviews" data-product-id="braided-line"></div>
       </div>
     </div>
     <div class="card">
@@ -241,6 +244,7 @@
         <h3>Monofilament Line</h3>
         <div class="price">$5.99 <span class="ship-badge">Free shipping on any 3+ items</span></div>
         <a class="buy-btn" href="https://www.amazon.com/dp/B0HLWZWW4N" target="_blank" rel="noopener">Buy on Amazon</a>
+        <div class="product-reviews" data-product-id="mono-line"></div>
       </div>
     </div>
     <div class="card">
@@ -249,6 +253,7 @@
         <h3>Crankbait Keychains</h3>
         <div class="price">$10.99 <span class="ship-badge">Free shipping on any 3+ items</span></div>
         <a class="buy-btn" href="https://www.amazon.com/dp/B0HLVJJ1VW" target="_blank" rel="noopener">Buy on Amazon</a>
+        <div class="product-reviews" data-product-id="crankbait-keychains"></div>
       </div>
     </div>
     <div class="card">
@@ -257,6 +262,7 @@
         <h3>Fish Bottle Opener Keychain</h3>
         <div class="price">$6.99 <span class="ship-badge">Free shipping on any 3+ items</span></div>
         <a class="buy-btn" href="https://www.amazon.com/dp/B0HLWZZ6JS" target="_blank" rel="noopener">Buy on Amazon</a>
+        <div class="product-reviews" data-product-id="bottle-opener"></div>
       </div>
     </div>
     <div class="card">
@@ -265,6 +271,7 @@
         <h3>Neoprene Rod Straps (2-Pack)</h3>
         <div class="price">$6.99 <span class="ship-badge">Free shipping on any 3+ items</span></div>
         <a class="buy-btn" href="https://www.amazon.com/dp/B0HLVQ14XR" target="_blank" rel="noopener">Buy on Amazon</a>
+        <div class="product-reviews" data-product-id="rod-strap"></div>
       </div>
     </div>
     <div class="card">
@@ -273,6 +280,7 @@
         <h3>Spoon Spinner Set</h3>
         <div class="price">$9.99 <span class="ship-badge">Free shipping on any 3+ items</span></div>
         <a class="buy-btn" href="https://www.amazon.com/dp/B0HLVKSTWZ" target="_blank" rel="noopener">Buy on Amazon</a>
+        <div class="product-reviews" data-product-id="spoon-set"></div>
       </div>
     </div>
     <div class="card">
@@ -281,6 +289,7 @@
         <h3>Pencil Lure (53mm)</h3>
         <div class="price">$7.99 <span class="ship-badge">Free shipping on any 3+ items</span></div>
         <a class="buy-btn" href="https://www.amazon.com/dp/B0HLVJC8R5" target="_blank" rel="noopener">Buy on Amazon</a>
+        <div class="product-reviews" data-product-id="pencil-lure"></div>
       </div>
     </div>
     <div class="card">
@@ -289,6 +298,7 @@
         <h3>Fishing Knot Guide</h3>
         <div class="price">$6.99 <span class="ship-badge">Free shipping on any 3+ items</span></div>
         <a class="buy-btn" href="https://www.amazon.com/dp/B0HLVM7LZN" target="_blank" rel="noopener">Buy on Amazon</a>
+        <div class="product-reviews" data-product-id="knot-card"></div>
       </div>
     </div>
   </div>
@@ -296,6 +306,7 @@
 
 <footer>
   <div class="wrap">
+    <p><a href="catches.html" style="color:#ffc400;">Catch Wall</a></p>
     <p>BIG C'S FISHING CO. - A subsidiary of Big C's Products, LLC</p>
     <p style="color:#666; margin-top:10px;">&copy; 2026. All Rights Reserved.</p>
   </div>
@@ -421,5 +432,8 @@
     }, { passive: true });
   })();
 </script>
+<script src="js/site-config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/reviews.js"></script>
 </body>
 </html>

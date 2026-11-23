@@ -1,0 +1,13 @@
+{
+  "name": "bigcs-fishing-worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "test": "node --experimental-sqlite --test --test-concurrency=1",
+    "check": "wrangler deploy --dry-run --outdir ../.tmp-worker-check"
+  },
+  "devDependencies": {
+    "wrangler": "^4.50.0"
+  }
+}
